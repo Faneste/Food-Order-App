@@ -20,7 +20,7 @@
   "Review";
 }
 
-/* header */
+/*------------ header ------------*/
 .header {
   height: 165px;
   background-color: var(--black);
@@ -44,7 +44,7 @@
   padding-left: 470px;
 }
 
-/* introductory text */
+/*------------ introductory text ------------*/
 .introductoryText {
   text-align: center;
   grid-area: IntroductoryText;
@@ -64,20 +64,21 @@
   padding-bottom: 40px;
 }
 
-/* food builder */
+/*------------ food builder ------------*/
 .foodBuilder {
-  grid-area: FoodBuilder;
+  border-bottom: 3px solid var(--red);
+  border-bottom-style: dotted;
   /* grid options and naming */
+  grid-area: FoodBuilder;
   display: grid;
   grid-template-rows: repeat(2, auto);
   grid-template-columns: repeat(2, auto);
   grid-template-areas:
   "foodBuilderText foodBuilderText"
   "foodBuilderImage foodBuilderButtons";
-  border-bottom: 3px solid var(--red);
-  border-bottom-style: dotted;
 }
 
+/* text container */
 .foodBuilder__textContainer {
   grid-area: foodBuilderText;
   text-align: center;
@@ -95,36 +96,81 @@
   padding-bottom: 40px;
 }
 
+/* ingredients container */
 .foodBuilder__ingredientsContainer {
   grid-area: foodBuilderImage;
-  background-color: red;
+  margin-bottom: 50px;
+  /* background-color: red; */
 }
 
+/* buttons container */
 .foodBuilder__buttonsContainer {
   grid-area: foodBuilderButtons;
+  border: 1px solid var(--gray);
+  margin-bottom: 50px;
 }
 
-/* shopping cart */
+.foodBuilder__buttonsContainer__foodtypeMenu {
+  text-align: center;
+  border-bottom: 1px solid var(--gray);
+}
+
+.foodBuilder__buttonsContainer__foodtypeMenu__button {
+  background-color: none;
+  background: none;
+  border: none;
+  font-size: 25px;
+  /* font-weight: 600; */
+  margin: 20px;
+}
+
+.foodBuilder__buttonsContainer__foodtypeMenu__button:hover {
+  cursor: pointer;
+}
+
+.foodBuilder__buttonsContainer__foodtypeMenu__span {font-weight: 700;}
+
+.foodBuilder__ingredientsContainerbutton {
+  text-align: center;
+  border-bottom: 1px solid var(--gray);
+}
+
+.foodBuilder__ingredientsContainer__pizzaIngredientsMenuContainer {
+
+}
+
+.foodBuilder__ingredientsContainer__pizzaIngredientsMenuContainer__button {
+  background: none;
+  border: none;
+  font-size: 15px;
+  margin: 20px;
+}
+
+.foodBuilder__ingredientsContainer__pizzaIngredientsMenuContainer__button:hover {
+  cursor: pointer;
+}
+
+/*------------ shopping cart ------------*/
 .shoppingCart {
   grid-area: ShoppingCart;
 }
 
-/* gallery */
+/*------------ gallery ------------*/
 .gallery {
   grid-area: Gallery;
 }
 
-/* banner advert */
+/*------------ banner advert ------------*/
 .bannerAdvert {
   grid-area: BannerAdvert;
 }
 
-/* review */
+/*------------ review ------------*/
 .review {
   grid-area: Review;
 }
 
-/* footer */
+/*------------ footer ------------*/
 .footer {
   /* grid-area: Footer; */
   height: 165px;

@@ -6,9 +6,11 @@ function Footer() {
   return (
     <div className="footer">
       <div className="footer__container">
-        <img className="footer__container__logo" src={footerLogo}/>
-        <img className="footer__container__basil" src={footerBasil}/>
-        <div className="footer__container__socialContainer"><i class="fab fa-facebook-f"></i></div>
+        <img className="footer__container__logo" src={footerLogo} alt="footerLogo"/>
+        <a href="#"><div className="footer__container__socialContainer" ><i className="fab fa-facebook-f"></i></div></a>
+        <a href="#"><div className="footer__container__socialContainer"><i className="fab fa-twitter"></i></div></a>
+        <a href="#"><div className="footer__container__socialContainer"><i className="fab fa-instagram"></i></div></a>
+        <img className="footer__container__basil" src={footerBasil} alt="footerBasil"/>
       </div>
     </div>
   )

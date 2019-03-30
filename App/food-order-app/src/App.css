@@ -2,6 +2,7 @@
     --black: #000000;
     --gray: #e3e3e3;
     --red: #eb0707;
+    --white: #fff;
 }
 
 .app {
@@ -66,6 +67,41 @@
 /* food builder */
 .foodBuilder {
   grid-area: FoodBuilder;
+  /* grid options and naming */
+  display: grid;
+  grid-template-rows: repeat(2, auto);
+  grid-template-columns: repeat(2, auto);
+  grid-template-areas:
+  "foodBuilderText foodBuilderText"
+  "foodBuilderImage foodBuilderButtons";
+  border-bottom: 3px solid var(--red);
+  border-bottom-style: dotted;
+}
+
+.foodBuilder__textContainer {
+  grid-area: foodBuilderText;
+  text-align: center;
+}
+
+.foodBuilder__textContainer__title {
+  font-weight: 900;
+  margin-top: 40px;
+}
+
+.foodBuilder__textContainer__text {
+  margin: 0px auto;
+  width: 800px;
+  font-weight: 400;
+  padding-bottom: 40px;
+}
+
+.foodBuilder__ingredientsContainer {
+  grid-area: foodBuilderImage;
+  background-color: red;
+}
+
+.foodBuilder__buttonsContainer {
+  grid-area: foodBuilderButtons;
 }
 
 /* shopping cart */
@@ -113,13 +149,36 @@
   display: block;
   margin: 0px auto;
   margin-top: -35px;
-  margin-right: 100px;
+  /* margin-right: 80px; */
   /* margin-top: -175px; */
   /* margin-right: 150px; */
 }
 
+.footer__container__socialContainer {
+  width: 55px;
+  height: 55px;
+  background-color: var(--white);
+  float: right;
+  border-radius: 25px;
+  font-size: 30px;
+  color: var(--black);
+  margin-left: 20px;
+  margin-top: 50px;
+}
 
+.footer__container__socialContainer i {
+  padding-top: 12px;
+  padding-left: 13px;
+}
 
+.footer__container__socialContainer:hover {
+  cursor: pointer;
+  background-color: var(--gray);
+}
+
+.footer__container__socialContainer:hover i {
+  color: #333333;
+}
 
 
 

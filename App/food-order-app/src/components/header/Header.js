@@ -7,8 +7,8 @@ import headerBasil from '../../images/graphics/headerBasil.png';
 function Header() {
   return (
     <div className="header">
-      <img className="header__logo" src={headerLogo}/>
-      <img className="header__basil" src={headerBasil}/>
+      <img className="header__logo" src={headerLogo} alt="headerLogo"/>
+      <img className="header__basil" src={headerBasil} alt="headerLogo"/>
     </div>
   )
 }

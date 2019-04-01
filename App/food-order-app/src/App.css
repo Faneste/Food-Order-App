@@ -1,6 +1,7 @@
 :root {
     --black: #000000;
     --gray: #e3e3e3;
+    --darkGray: #b9b9b9;
     --red: #eb0707;
     --white: #fff;
 }
@@ -153,11 +154,100 @@
 /*------------ shopping cart ------------*/
 .shoppingCart {
   grid-area: ShoppingCart;
+  border: 1px solid var(--gray);
+  margin-top: 50px;
+  border-bottom: 5px solid var(--red);
+}
+
+/* single item */
+.shoppingCart__item {
+  border: 1px solid var(--gray);
+  overflow:hidden;
+  /* border-bottom: 1px solid var(--gray); */
+  margin: 20px;
+  padding: 10px;
+}
+
+.shoppingCart__item__nameContainer {
+  float: left;
+  border-right: 1px solid var(--gray);
+  padding-right: 10px;
+}
+
+.shoppingCart__item__nameContainer__name {
+  font-weight: 300;
+}
+
+.shoppingCart__item__ingredientsContainer {
+  float: left;
+  padding: 0px 10px 0px 10px;
+}
+
+.shoppingCart__item__ingredientsContainer__ingredients {
+  font-weight: 300;
+}
+
+.shoppingCart__item__priceContainer {
+  float: right;
+  border-left: 1px solid var(--gray);
+  padding-left: 10px;
+}
+
+/* total order */
+
+.shoppingCart__total {
+  /* border: 1px solid var(--red); */
+  background-color: var(--darkGray);
+  color: var(--white);
+  overflow:hidden;
+  margin: 20px;
+  padding: 10px;
+}
+
+.shoppingCart__total__priceContainer {
+  float: left;
+  border-right: 1px solid var(--gray);
+  padding-right: 10px;
+}
+
+.shoppingCart__total__calorieContainer {
+  float: left;
+  padding: 0px 10px 0px 10px;
+}
+
+.shoppingCart__total__adressContainer {
+  float: right;
+  border-left: 1px solid var(--gray);
+  padding-left: 10px;
 }
 
 /*------------ gallery ------------*/
 .gallery {
+  /* text-align: center; */
+  margin: 0px auto;
+  margin-top: 30px;
   grid-area: Gallery;
+  /* grid options and naming */
+  display: grid;
+  grid-template-columns: repeat(2, 500px);
+  grid-template-areas:
+  "GalleryImage GalleryText";
+}
+
+.gallery__imageContainer {
+  grid-area: GalleryImage;
+  width: 500px;
+  height: 500px;
+  padding: 20px;
+  margin-right: 20px;
+}
+
+.gallery__textContainer {
+  grid-area: GalleryText;
+  width: 500px;
+  height: 500px;
+  padding: 20px;
+  margin-left: 20px;
 }
 
 /*------------ banner advert ------------*/

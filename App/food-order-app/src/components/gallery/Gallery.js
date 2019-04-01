@@ -1,11 +1,26 @@
 import React from 'react';
+import GallerySlider from "./GallerySlider";
 
-function Gallery() {
-  return (
-    <div className="gallery">
-      <h1>Gallery</h1>
-    </div>
-  )
+
+class Gallery extends React.Component {
+
+  render() {
+    return (
+      <div className="gallery">
+        <div className="gallery__imageContainer">
+          <GallerySlider />
+        </div>
+        <div className="gallery__textContainer">
+          <h1>Gallery Title</h1>
+          <h4>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry.</h4>
+        </div>
+      </div>
+    )
+  }
+
 }
 
 export default Gallery;

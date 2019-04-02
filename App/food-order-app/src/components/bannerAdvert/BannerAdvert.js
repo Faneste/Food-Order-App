@@ -1,9 +1,10 @@
 import React from 'react';
+import bannerAd from '../../images/graphics/bannerAd.png';
 
 function BannerAdvert() {
   return (
     <div className="bannerAdvert">
-      <h1>BannerAdvert</h1>
+      <img className="bannerAdvert__image" src={bannerAd} alt="bannerAd"/>
     </div>
   )
 }

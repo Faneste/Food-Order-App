@@ -250,14 +250,83 @@
   margin-left: 20px;
 }
 
+.gallery__textContainer h4 {
+  font-weight: 400;
+  margin-top: 40px;
+}
+
 /*------------ banner advert ------------*/
 .bannerAdvert {
   grid-area: BannerAdvert;
+  text-align: center;
+  border-bottom: 3px solid var(--red);
+  border-bottom-style: dotted;
+  border-top: 3px solid var(--red);
+  border-top-style: dotted;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  margin-top: 50px;
 }
 
 /*------------ review ------------*/
 .review {
   grid-area: Review;
+  margin-top: 50px;
+  margin-bottom: 70px;
+  border: 1px solid var(--gray);
+  padding: 20px;
+}
+
+/* review field */
+.review__fieldContainer {
+  border: 1px solid var(--gray);
+  margin-bottom: 50px;
+}
+
+.review__fieldContainer__review__topContainer {
+  border-bottom: 1px solid var(--gray);
+}
+
+.review__fieldContainer__review__topContainer h3 {
+  display: inline-block;
+  padding-right: 20px;
+  padding-left: 20px;
+  border-right: 1px solid var(--gray);
+}
+
+.review__fieldContainer__review__topContainer i {
+  padding-left: 20px;
+}
+
+.review__fieldContainer__review__bottomContainer h3 {
+  font-weight: 400;
+  padding-left: 20px;
+}
+
+/* input field */
+.review__inputContainer {
+  /* border: 1px solid var(--gray); */
+}
+
+.review__inputContainer__form__name, .review__inputContainer__form__email, .review__inputContainer__form__comment, .review__inputContainer__form__button {
+  width: 98%;
+  border: 1px solid var(--gray);
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 17px;
+}
+
+.review__inputContainer__form__comment {
+  height: 200px;
+}
+
+.review__inputContainer input[type=text] {
+  color: var(--black);
+  padding-left: 20px;
+}
+
+.review__inputContainer__form__button {
+  width: 100%;
 }
 
 /*------------ footer ------------*/

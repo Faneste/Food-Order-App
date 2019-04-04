@@ -8,11 +8,11 @@ function Review() {
         <div className="review__fieldContainer__review">
           <div className="review__fieldContainer__review__topContainer">
             <h3>Petar Petrović</h3>
-            <span style={{color:'#ffef26'}}><i class="fas fa-star"></i></span>
-            <span style={{color:'#ffef26'}}><i class="fas fa-star"></i></span>
-            <span style={{color:'#ffef26'}}><i class="fas fa-star"></i></span>
-            <span style={{color:'#ffef26'}}><i class="fas fa-star"></i></span>
-            <i class="fas fa-star"></i>
+            <span style={{color:'#ffef26'}}><i className="fas fa-star"></i></span>
+            <span style={{color:'#ffef26'}}><i className="fas fa-star"></i></span>
+            <span style={{color:'#ffef26'}}><i className="fas fa-star"></i></span>
+            <span style={{color:'#ffef26'}}><i className="fas fa-star"></i></span>
+            <i className="fas fa-star"></i>
           </div>
           {/* review comment */}
           <div className="review__fieldContainer__review__bottomContainer">
@@ -28,11 +28,11 @@ function Review() {
         <div className="review__fieldContainer__review">
           <div className="review__fieldContainer__review__topContainer">
             <h3>Petar Petrović</h3>
-            <span style={{color:'#ffef26'}}><i class="fas fa-star"></i></span>
-            <span style={{color:'#ffef26'}}><i class="fas fa-star"></i></span>
-            <span style={{color:'#ffef26'}}><i class="fas fa-star"></i></span>
-            <span style={{color:'#ffef26'}}><i class="fas fa-star"></i></span>
-            <i class="fas fa-star"></i>
+            <span style={{color:'#ffef26'}}><i className="fas fa-star"></i></span>
+            <span style={{color:'#ffef26'}}><i className="fas fa-star"></i></span>
+            <span style={{color:'#ffef26'}}><i className="fas fa-star"></i></span>
+            <span style={{color:'#ffef26'}}><i className="fas fa-star"></i></span>
+            <i className="fas fa-star"></i>
           </div>
           {/* review comment */}
           <div className="review__fieldContainer__review__bottomContainer">

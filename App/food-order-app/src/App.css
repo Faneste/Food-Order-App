@@ -1,9 +1,15 @@
 :root {
+    /* colors */
     --black: #000000;
     --gray: #e3e3e3;
     --darkGray: #b9b9b9;
     --red: #eb0707;
     --white: #fff;
+    /* font sizes */
+    --primaryTitle: 2em;
+    --secondaryTitle: 1.6em;
+    --primaryText: 1em;
+    --secondaryText: 0.7em;
 }
 
 .app {
@@ -54,11 +60,13 @@
 }
 
 .introductoryText__title {
+  font-size: var(--primaryTitle);
   font-weight: 900;
   margin-top: 40px;
 }
 
 .introductoryText__text {
+  font-size: var(--primaryText);
   margin: 0px auto;
   width: 800px;
   font-weight: 400;
@@ -86,11 +94,13 @@
 }
 
 .foodBuilder__textContainer__title {
+  font-size: var(--secondaryTitle);
   font-weight: 900;
   margin-top: 40px;
 }
 
 .foodBuilder__textContainer__text {
+  font-size: var(--primaryText);
   margin: 0px auto;
   width: 800px;
   font-weight: 400;
@@ -112,6 +122,7 @@
 }
 
 .foodBuilder__buttonsContainer__foodtypeMenu {
+  font-size: var(--primaryTitle);
   text-align: center;
   border-bottom: 1px solid var(--gray);
 }
@@ -120,7 +131,7 @@
   background-color: none;
   background: none;
   border: none;
-  font-size: 25px;
+  font-size: var(--secondaryText);
   /* font-weight: 600; */
   margin: 20px;
 }
@@ -129,7 +140,7 @@
   cursor: pointer;
 }
 
-.foodBuilder__buttonsContainer__foodtypeMenu__span {font-weight: 700;}
+/* .foodBuilder__buttonsContainer__foodtypeMenu__span {font-weight: 700;} */
 
 .foodBuilder__ingredientsContainerbutton {
   text-align: center;
@@ -141,9 +152,10 @@
 }
 
 .foodBuilder__ingredientsContainer__pizzaIngredientsMenuContainer__button {
+  font-size: var(--primaryText);
   background: none;
   border: none;
-  font-size: 15px;
+  /* font-size: 15px; */
   margin: 20px;
 }
 
@@ -168,6 +180,11 @@
   padding: 10px;
 }
 
+.shoppingCart__item h2 {
+  font-size: var(--primaryText);
+  margin: 0px;
+}
+
 .shoppingCart__item__nameContainer {
   float: left;
   border-right: 1px solid var(--gray);
@@ -175,7 +192,7 @@
 }
 
 .shoppingCart__item__nameContainer__name {
-  font-weight: 300;
+  font-weight: 500;
 }
 
 .shoppingCart__item__ingredientsContainer {
@@ -188,6 +205,7 @@
 }
 
 .shoppingCart__item__priceContainer {
+  font-weight: 500;
   float: right;
   border-left: 1px solid var(--gray);
   padding-left: 10px;
@@ -198,10 +216,15 @@
 .shoppingCart__total {
   /* border: 1px solid var(--red); */
   background-color: var(--darkGray);
-  color: var(--white);
+  /* color: var(--white); */
   overflow:hidden;
   margin: 20px;
   padding: 10px;
+}
+
+.shoppingCart__total h2 {
+  font-size: var(--primaryText);
+  margin: 0px;
 }
 
 .shoppingCart__total__priceContainer {
@@ -250,7 +273,12 @@
   margin-left: 20px;
 }
 
+.gallery__textContainer h1 {
+  font-size: var(--secondaryTitle);
+}
+
 .gallery__textContainer h4 {
+  font-size: var(--primaryText);
   font-weight: 400;
   margin-top: 40px;
 }
@@ -266,6 +294,10 @@
   padding-top: 50px;
   padding-bottom: 50px;
   margin-top: 50px;
+}
+
+.bannerAdvert__imageMobile {
+  display : none;
 }
 
 /*------------ review ------------*/
@@ -288,6 +320,7 @@
 }
 
 .review__fieldContainer__review__topContainer h3 {
+  font-size: var(--primaryText);
   display: inline-block;
   padding-right: 20px;
   padding-left: 20px;
@@ -299,6 +332,7 @@
 }
 
 .review__fieldContainer__review__bottomContainer h3 {
+  font-size: var(--primaryText);
   font-weight: 400;
   padding-left: 20px;
 }
@@ -313,7 +347,8 @@
   border: 1px solid var(--gray);
   padding-top: 10px;
   padding-bottom: 10px;
-  font-size: 17px;
+  font-size: var(--primaryText);
+  /* font-size: 17px; */
 }
 
 .review__inputContainer__form__comment {
@@ -385,9 +420,366 @@
   color: #333333;
 }
 
+/*---------------------------------------------------------------*/
+/*------------------------ mobile design ------------------------*/
+/*---------------------------------------------------------------*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+  :root {
+      /* colors */
+      /* --black: #000000;
+      --gray: #e3e3e3;
+      --darkGray: #b9b9b9;
+      --red: #eb0707;
+      --white: #fff; */
+      /* font sizes */
+      --primaryTitle: 1.7em;
+      --secondaryTitle: 1.6em;
+      --primaryText: 1em;
+      --secondaryText: 0.7em;
+  }
+
+  .app {
+    width: 100%;
+    margin: 0px;
+  }
+  /*------------ header ------------*/
+  .header {
+    height: 115px;
+  }
+
+  .header__logo {
+    width: 150px;
+  }
+
+  .header__basil {
+    padding-left: 200px;
+    padding-top: 8px;
+    width: 70px;
+  }
+  /*------------ introductory text ------------*/
+  .introductoryText {
+
+  }
+
+  .introductoryText__title {
+
+  }
+
+  .introductoryText__text {
+    width: 90%;
+  }
+  /*------------ food builder ------------*/
+  .foodBuilder {
+    /* grid options and naming */
+    grid-area: FoodBuilder;
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+    grid-template-columns: repeat(2, auto);
+    grid-template-areas:
+    "foodBuilderButtons foodBuilderButtons"
+    "foodBuilderImage foodBuilderImage";
+  }
+
+  /* text container */
+  .foodBuilder__textContainer {
+    display: none;
+  }
+
+  .foodBuilder__textContainer__title {
+
+  }
+
+  .foodBuilder__textContainer__text {
+    width: 90%;
+  }
+
+  /* ingredients container */
+  .foodBuilder__ingredientsContainer {
+    grid-area: foodBuilderImage;
+    margin: 0px auto;
+  }
+
+  .foodBuilder__ingredientsContainer img {
+    width: 100%;
+  }
+
+  /* buttons container */
+  .foodBuilder__buttonsContainer {
+    grid-area: foodBuilderButtons;
+  }
+
+  .foodBuilder__buttonsContainer__foodtypeMenu {
+
+  }
+
+  .foodBuilder__buttonsContainer__foodtypeMenu__button {
+
+  }
+
+  .foodBuilder__buttonsContainer__foodtypeMenu__button:hover {
+
+  }
+
+  .foodBuilder__ingredientsContainerbutton {
+    text-align: center;
+    border-bottom: 1px solid var(--gray);
+  }
+
+  .foodBuilder__ingredientsContainer__pizzaIngredientsMenuContainer {
+
+  }
+
+  .foodBuilder__ingredientsContainer__pizzaIngredientsMenuContainer__button {
+
+  }
+
+  .foodBuilder__ingredientsContainer__pizzaIngredientsMenuContainer__button:hover {
+
+  }
+  /*------------ shopping cart ------------*/
+  .shoppingCart {
+    margin-top: 20px;
+    border-bottom: 3px solid var(--red);
+    border-bottom-style: dotted;
+  }
+
+  /* single item */
+  .shoppingCart__item {
+
+  }
+
+  .shoppingCart__item h2 {
+
+  }
+
+  .shoppingCart__item__nameContainer {
+    float: none;
+    border-right: none;
+    border-bottom: 1px solid var(--gray);
+    font-size: var(--secondaryTitle);
+  }
+
+  .shoppingCart__item__nameContainer__name {
+
+  }
+
+  .shoppingCart__item__ingredientsContainer {
+    float: none;
+    border-bottom: 1px solid var(--gray);
+    padding: 0px 10px 0px 0px;
+    padding-top: 10px;
+  }
+
+  .shoppingCart__item__ingredientsContainer__ingredients {
+
+  }
+
+  .shoppingCart__item__priceContainer {
+    float: none;
+    border-left: none;
+    padding-left: 0px;
+    padding-top: 10px;
+  }
+
+  /* total order */
+
+  .shoppingCart__total {
+
+  }
+
+  .shoppingCart__total h2 {
+
+  }
+
+  .shoppingCart__total__priceContainer {
+    float: none;
+    border-right: none;
+    border-bottom: 1px solid var(--gray);
+    font-size: var(--secondaryTitle);
+  }
+
+  .shoppingCart__total__priceContainer h2 {
+    color: var(--white);
+  }
+
+  .shoppingCart__total__calorieContainer {
+    float: none;
+    border-bottom: 1px solid var(--gray);
+    padding: 0px 10px 0px 0px;
+    padding-top: 10px;
+  }
+
+  .shoppingCart__total__adressContainer {
+    float: none;
+    border-left: none;
+    padding-left: 0px;
+    padding-top: 10px;
+  }
+  /*------------ gallery ------------*/
+  .gallery {
+    /* text-align: center; */
+    margin: 0px auto;
+    margin-top: 0px;
+    grid-area: Gallery;
+    /* grid options and naming */
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+    grid-template-columns: none;
+    grid-template-areas:
+    "GalleryText"
+    "GalleryImage";
+  }
+
+  .gallery__imageContainer {
+    grid-area: GalleryImage;
+    margin-right: 0px;
+    padding: 0px;
+    margin: 0px auto;
+    width: 85%;
+    height: auto;
+  }
+
+  .gallery__textContainer {
+    grid-area: GalleryText;
+    margin-left: 0px;
+    margin: 0px auto;
+    text-align: center;
+    width: 80%;
+    height: auto;
+  }
+
+  .gallery__textContainer h1 {
+    margin-top: 0px;
+  }
+
+  .gallery__textContainer h4 {
+    margin-top: 20px;
+  }
+
+  /*------------ banner advert ------------*/
+  .bannerAdvert {
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-top: 20px;
+  }
+
+  .bannerAdvert__image {
+    /* width: 90%; */
+    display: none;
+  }
+
+  .bannerAdvert__imageMobile {
+    display : block;
+    width: 90%;
+    margin: 0px auto;
+  }
+
+  /*------------ review ------------*/
+  .review {
+    padding: 5px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  /* review field */
+  .review__fieldContainer {
+    margin-bottom: 10px;
+  }
+
+  .review__fieldContainer__review__topContainer {
+
+  }
+
+  .review__fieldContainer__review__topContainer h3 {
+
+  }
+
+  .review__fieldContainer__review__topContainer i {
+    padding-left: 0px;
+  }
+
+  .review__fieldContainer__review__bottomContainer h3 {
+
+  }
+
+  /* input field */
+  .review__inputContainer {
+
+  }
+
+  .review__inputContainer__form__name, .review__inputContainer__form__email, .review__inputContainer__form__comment, .review__inputContainer__form__button {
+    width: 96%;
+  }
+
+  .review__inputContainer__form__comment {
+    height: 80px;
+  }
+
+  .review__inputContainer input[type=text] {
+    padding-left: 10px;
+  }
+
+  .review__inputContainer__form__button {
+    width: 100%;
+  }
+
+  /*------------ footer ------------*/
+  .footer {
+    height: auto;
+    padding-bottom: 20px;
+    padding-top: 10px;
+    text-align: center;
+    background-color: var(--black);
+    background-image: url('./images/graphics/footerBackground.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .footer__container {
+    width: 100%;
+  }
+
+  .footer__container__logo {
+    padding-top: 20px;
+    width: 230px;
+    display: block;
+    margin: 0px auto;
+  }
+
+  .footer__container__basil {
+    display: none;
+  }
+
+  .footer__container__socialContainer {
+    width: 48px;
+    height: 48px;
+    float: none;
+    border-radius: 25px;
+    font-size: var(--secondaryTitle);
+    /* margin-left: 20px; */
+    margin-top: 10px;
+    display: inline-block;
+    /* margin: 0px auto; */
+  }
+
+  .footer__container__socialContainer i {
+    padding-top: 10px;
+    padding-left: 0px;
+  }
+
+  .footer__container__socialContainer:hover {
+
+  }
+
+  .footer__container__socialContainer:hover i {
+
+  }
 
 
 
+}
 
 
 

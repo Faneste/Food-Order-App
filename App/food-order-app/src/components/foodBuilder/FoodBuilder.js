@@ -7,7 +7,7 @@ function FoodBuilder() {
 
       {/* title and text of the food building module */}
       <div className="foodBuilder__textContainer">
-        <h2 className="foodBuilder__textContainer__title">Website main title</h2>
+        <h2 className="foodBuilder__textContainer__title">Order your food online as you like it</h2>
         <h3 className="foodBuilder__textContainer__text">
         Lorem Ipsum is simply dummy text of the printing and typesetting industry.
         Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
@@ -25,11 +25,11 @@ function FoodBuilder() {
       <div className="foodBuilder__buttonsContainer">
         <div className="foodBuilder__buttonsContainer__foodtypeMenu">
           <button className="foodBuilder__buttonsContainer__foodtypeMenu__button">PIZZE</button>
-          <span className="foodBuilder__buttonsContainer__foodtypeMenu__span">~</span>
+          <span className="foodBuilder__buttonsContainer__foodtypeMenu__span" style={{fontWeight: "400"}}>-</span>
           <button className="foodBuilder__buttonsContainer__foodtypeMenu__button">SENDVIČI</button>
-          <span className="foodBuilder__buttonsContainer__foodtypeMenu__span">~</span>
+          <span className="foodBuilder__buttonsContainer__foodtypeMenu__span" style={{fontWeight: "400"}}>-</span>
           <button className="foodBuilder__buttonsContainer__foodtypeMenu__button">PITE</button>
-          <span className="foodBuilder__buttonsContainer__foodtypeMenu__span">~</span>
+          <span className="foodBuilder__buttonsContainer__foodtypeMenu__span" style={{fontWeight: "400"}}>-</span>
           <button className="foodBuilder__buttonsContainer__foodtypeMenu__button">SALATE</button>
         </div>
 
@@ -53,7 +53,7 @@ function FoodBuilder() {
           <div className="foodBuilder__ingredientPizza__buttonContainer">
             {/* pizza button image */}
             <div className="foodBuilder__ingredientPizza__buttonContainer__imageContainer">
-              <img className="foodBuilder__ingredientPizza__buttonContainer__imageContainer__image"/>
+              <img className="foodBuilder__ingredientPizza__buttonContainer__imageContainer__image" alt="pizzaIngredient"/>
             </div>
             {/* pizza button name */}
             <div className="foodBuilder__ingredientPizza__buttonContainer__name">Pepperoni kobasica</div>

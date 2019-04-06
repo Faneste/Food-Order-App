@@ -1,5 +1,6 @@
 import React from 'react';
 import pizzaDough from '../../images/ingredients/pizzaDough.png';
+import peperoniButton from '../../images/buttons/pizza/peperoniButton.png';
 
 function FoodBuilder() {
   return (
@@ -25,11 +26,11 @@ function FoodBuilder() {
       <div className="foodBuilder__buttonsContainer">
         <div className="foodBuilder__buttonsContainer__foodtypeMenu">
           <button className="foodBuilder__buttonsContainer__foodtypeMenu__button">PIZZE</button>
-          <span className="foodBuilder__buttonsContainer__foodtypeMenu__span" style={{fontWeight: "400"}}>-</span>
+          <span className="foodBuilder__buttonsContainer__foodtypeMenu__span" style={{fontWeight: "400"}}></span>
           <button className="foodBuilder__buttonsContainer__foodtypeMenu__button">SENDVIČI</button>
-          <span className="foodBuilder__buttonsContainer__foodtypeMenu__span" style={{fontWeight: "400"}}>-</span>
+          <span className="foodBuilder__buttonsContainer__foodtypeMenu__span" style={{fontWeight: "400"}}></span>
           <button className="foodBuilder__buttonsContainer__foodtypeMenu__button">PITE</button>
-          <span className="foodBuilder__buttonsContainer__foodtypeMenu__span" style={{fontWeight: "400"}}>-</span>
+          <span className="foodBuilder__buttonsContainer__foodtypeMenu__span" style={{fontWeight: "400"}}></span>
           <button className="foodBuilder__buttonsContainer__foodtypeMenu__button">SALATE</button>
         </div>
 
@@ -52,20 +53,17 @@ function FoodBuilder() {
         <div className="foodBuilder__ingredientPizza">
           <div className="foodBuilder__ingredientPizza__buttonContainer">
             {/* pizza button image */}
-            <div className="foodBuilder__ingredientPizza__buttonContainer__imageContainer">
-              <img className="foodBuilder__ingredientPizza__buttonContainer__imageContainer__image" alt="pizzaIngredient"/>
-            </div>
+            <img className="foodBuilder__ingredientPizza__buttonContainer__image" src={peperoniButton} alt="pizzaIngredient"/>
             {/* pizza button name */}
-            <div className="foodBuilder__ingredientPizza__buttonContainer__name">Pepperoni kobasica</div>
+            <h4 className="foodBuilder__ingredientPizza__buttonContainer__name">Pepperoni kobasica</h4>
             {/* pizza button description */}
-            <div className="foodBuilder__ingredientPizza__buttonContainer__description">Description</div>
+            <h4 className="foodBuilder__ingredientPizza__buttonContainer__description">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</h4>
             {/* pizza button price */}
-            <div className="foodBuilder__ingredientPizza__buttonContainer__price">120 din</div>
+            <div className="foodBuilder__ingredientPizza__buttonContainer__price">120 <span style={{fontSize:"0.5em"}}>din</span></div>
           </div>
         </div>
 
       </div>
-
     </div>
   )
 }

@@ -130,14 +130,18 @@
 
 .foodBuilder__buttonsContainer__foodtypeMenu__button {
   background-color: none;
-  background: none;
-  border: none;
+  text-decoration: none;
+  /* background: none; */
+  /* border: none; */
+  color: var(--black);
   font-size: var(--secondaryText);
   /* font-weight: 600; */
   border-left: 1px solid var(--darkGray);
   border-right: 1px solid var(--darkGray);
   margin-left: 20px;
   margin-right: 20px;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 
 .foodBuilder__buttonsContainer__foodtypeMenu__button:hover {
@@ -177,47 +181,52 @@
 
 /* ingredients buttons */
 
-.foodBuilder__ingredientPizza {}
+.foodBuilder__ingredientButton {}
 
-.foodBuilder__ingredientPizza__buttonContainer {
+.foodBuilder__ingredientButton__buttonContainer {
   border-bottom: 1px solid var(--gray);
   /* grid options and naming */
   display: grid;
   /* grid-template-columns: repeat(3, 300px); */
   /* grid-template-columns: repeat(3, auto); */
   /* align-items: center; */
-  text-align: center;
-  grid-template-columns: 1fr 3fr 1fr;
-  grid-template-rows: repeat(3, auto);
+  /* text-align: center; */
+  grid-template-columns: 120px auto;
+  /* grid-template-rows: repeat(1, auto); */
   grid-template-areas:
-  "ingredientImage ingredientText ingredientPrice1"
-  "ingredientImage ingredientText2 ingredientPrice1"
-  ;
+  "ingredientImage ingredientText";
 }
 
-.foodBuilder__ingredientPizza__buttonContainer:hover {
+.foodBuilder__ingredientButton__buttonContainer:hover {
   cursor: pointer;
   background-color: var(--gray);
 }
 
-.foodBuilder__ingredientPizza__buttonContainer:active {
+.foodBuilder__ingredientButton__buttonContainer:active {
   background-color: var(--white);
 }
 
-.foodBuilder__ingredientPizza__buttonContainer__image {
+.foodBuilder__ingredientButton__buttonContainer__image {
   grid-area: ingredientImage;
-  padding: 2px;
+  /* width: 50%; */
+  /* height: 30%; */
+  padding: 3px;
 }
 
-.foodBuilder__ingredientPizza__buttonContainer__name {
+.foodBuilder__ingredientButton__buttonContainer h4 {
   grid-area: ingredientText;
-  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.foodBuilder__ingredientButton__buttonContainer__name {
+  /* grid-area: ingredientText; */
+  padding-top: 2px;
   margin: 0px;
   font-size: var(--primaryText);
 }
 
-.foodBuilder__ingredientPizza__buttonContainer__description {
-  grid-area: ingredientText2;
+.foodBuilder__ingredientButton__buttonContainer__description {
+  /* grid-area: ingredientText; */
   margin: 0px;
   /* margin-top: -10px; */
   font-size: var(--secondaryText);
@@ -225,8 +234,9 @@
   /* width: 70%; */
 }
 
-.foodBuilder__ingredientPizza__buttonContainer__price {
-  grid-area: ingredientPrice1;
+.foodBuilder__ingredientButton__buttonContainer__price {
+  /* grid-area: ingredientText; */
+  margin: 0px;
   font-size: var(--secondaryTitle);
   /* border-left: 1px solid var(--gray); */
   /* margin-top: -60px; */
@@ -601,7 +611,10 @@
   }
 
   .foodBuilder__buttonsContainer__foodtypeMenu__button {
-
+    width: 30%;
+    display: inline-block;
+    /* padding-left: 0px; */
+    /* padding-right: 0px; */
   }
 
   .foodBuilder__buttonsContainer__foodtypeMenu__button:hover {
@@ -637,8 +650,15 @@
 
   }
 
-  .foodBuilder__ingredientPizza__buttonContainer__image {
+  .foodBuilder__ingredientPizza__buttonContainer h4 {
+    padding-right: 10px;
+    /* margin-right: -20px; */
+  }
 
+  .foodBuilder__ingredientPizza__buttonContainer__image {
+    width: 80%;
+    height: 93%;
+    margin: 0px auto;
   }
 
   .foodBuilder__ingredientPizza__buttonContainer__name {

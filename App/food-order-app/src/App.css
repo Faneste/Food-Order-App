@@ -131,8 +131,8 @@
 .foodBuilder__buttonsContainer__foodtypeMenu__button {
   background-color: none;
   text-decoration: none;
-  /* background: none; */
-  /* border: none; */
+  background: none;
+  border: none;
   color: var(--black);
   font-size: var(--secondaryText);
   /* font-weight: 600; */
@@ -147,6 +147,11 @@
 .foodBuilder__buttonsContainer__foodtypeMenu__button:hover {
   cursor: pointer;
   color: var(--red);
+}
+
+.foodBuilder__buttonsContainer__foodtypeMenu__button:active {
+  color: var(--black);
+  /* background-color: var(--gray); */
 }
 
 /* .foodBuilder__buttonsContainer__foodtypeMenu__span {

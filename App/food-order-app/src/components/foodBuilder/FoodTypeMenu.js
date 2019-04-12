@@ -1,16 +1,16 @@
 import React from 'react';
 
-function FoodTypeMenu() {
+function FoodTypeMenu(props) {
   return (
       <div className="foodBuilder__buttonsContainer__foodtypeMenu">
         {/* menu of the type of food */}
-        <a className="foodBuilder__buttonsContainer__foodtypeMenu__button" href="/pizzaButtons">PIZZE</a>
+        <button className="foodBuilder__buttonsContainer__foodtypeMenu__button" id="pizze" onClick={props.tabMenu}>PIZZE</button>
         <span className="foodBuilder__buttonsContainer__foodtypeMenu__span" style={{fontWeight: "400"}}></span>
-        <a className="foodBuilder__buttonsContainer__foodtypeMenu__button" href="/sendviciButtons">SENDVIČI</a>
+        <button className="foodBuilder__buttonsContainer__foodtypeMenu__button sendvici" id="sendvici" onClick={props.tabMenu}>SENDVIČI</button>
         <span className="foodBuilder__buttonsContainer__foodtypeMenu__span" style={{fontWeight: "400"}}></span>
-        <a className="foodBuilder__buttonsContainer__foodtypeMenu__button" href="/piteButtons">PITE</a>
+        <button className="foodBuilder__buttonsContainer__foodtypeMenu__button pite" id="pite" onClick={props.tabMenu}>PITE</button>
         <span className="foodBuilder__buttonsContainer__foodtypeMenu__span" style={{fontWeight: "400"}}></span>
-        <a className="foodBuilder__buttonsContainer__foodtypeMenu__button" href="/salateButtons">SALATE</a>
+        <button className="foodBuilder__buttonsContainer__foodtypeMenu__button salate" id="salate" onClick={props.tabMenu}>SALATE</button>
       </div>
   )
 }

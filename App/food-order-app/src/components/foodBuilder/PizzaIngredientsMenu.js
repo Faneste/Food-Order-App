@@ -1,5 +1,6 @@
 import React from 'react';
 
+// unused module for pizza ingredients tab toggle menu
 function PizzaIngredientsMenu() {
   return (
         <div className="foodBuilder__ingredientsContainerbutton">

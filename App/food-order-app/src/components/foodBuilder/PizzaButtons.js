@@ -1,22 +1,17 @@
 import React from 'react';
-import peperoniButton from '../../images/buttons/pizza/peperoniButton.png';
+import Buttons from './Buttons';
 
-function PizzaButtons() {
+function PizzaButtons(props) {
   return (
-    <div className="foodBuilder__ingredientButton">
+    <div className="foodBuilder__ingredientButton" id="pizza-toggle">
       {/* buttons for ingredients */}
-      <div className="foodBuilder__ingredientButton__buttonContainer">
-        {/* button image */}
-        <img className="foodBuilder__ingredientButton__buttonContainer__image" src={peperoniButton} alt="pizzaIngredient"/>
-        <div> {/* wrapping div so that the text doesn't opverlapp without the wrapper */}
-        {/* button name */}
-        <h4 className="foodBuilder__ingredientButton__buttonContainer__name">Pepperoni kobasica</h4>
-        {/* button description */}
-        <h4 className="foodBuilder__ingredientButton__buttonContainer__description">Lorem Ipsum is simply dummy text of the printing.</h4>
-        {/* button price */}
-        <h4 className="foodBuilder__ingredientButton__buttonContainer__price">120 <span style={{fontSize:"0.5em"}}>din</span></h4>
-        </div>
-      </div>
+      <Buttons
+        buttonImage={props.buttonImage}
+        buttonName={props.buttonName}
+        buttonDescription={props.buttonDescription}
+        buttonPrice={props.buttonPrice}
+        imageAlt={props.imageAlt}
+      />
     </div>
   )
 }

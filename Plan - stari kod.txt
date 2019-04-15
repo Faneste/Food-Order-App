@@ -1,0 +1,140 @@
+Plan:
+1.napravi kostur app-a
+2.smisli listu sastojaka za pizzu,vrste pizze i sendvica
+3.napravi osnovno za sajt i smisli module layout kako ce da ide
+4.exportuj sve slike i grafiku
+
+Vrste Hrane:
+
+sendvici:
+sunka
+pecenica
+sir
+slanina
+pecurke
+
+Pizza Sastojci:
+
+sosevi:
+pelat
+bbq sos
+
+sirevi:
+sir
+pavlaka
+parmezan
+kajmak
+feta
+gauda
+
+meso:
+pileca prsa
+kulen
+cajna
+sunka
+slanina
+panceta
+
+povrce:
+paradajz
+zelena paprika
+crne masline
+sampinjoni
+feferoni
+rukola
+
+zacini:
+origano
+persun
+jaje
+
+Layout:
+
+|||-main module
+  ||-header
+  ||-introductory text
+  ||-food builder
+    |-food builder text field
+    |-food builder image
+    |-food builder buttons container
+      |-food builder button category list
+      |-food builder button ingredient list
+        |-food builder button
+          |-food builder button image
+          |-food builder button name
+          |-food builder button description
+          |-food builder button price
+
+  ||-shopping cart
+    |-shopping cart text field
+    |-shopping cart container
+      |-shopping cart container item
+      |-shopping cart container total
+
+  ||-gallery
+    |-gallery title
+    |-gallery images slider
+    |-gallery description
+
+  ||-baner advert
+
+  ||-review
+    |-review comment
+      |-review comment name
+      |-review comment stars
+      |-review comment text
+    |-review submit
+      |-review submit name
+      |-review submit mail
+      |-review submit text
+      |-review submit button
+
+  ||-footer
+    |-footer logo
+    |-footer social icons
+
+stari kod za tab toggle:
+
+  // toggling tab menu for types of food
+  tabMenu(e) {
+    const tabId = e.target.id;
+    // changes state and shows the food tab based on the button id
+    if (tabId === "pizze") {this.setState({ ingredientButtonToggle: "pizze" });}
+    if (tabId === "sendvici") {this.setState({ ingredientButtonToggle: "sendvici" });}
+    if (tabId === "pite") {this.setState({ ingredientButtonToggle: "pite" });}
+    if (tabId === "salate") {this.setState({ ingredientButtonToggle: "salate" });}
+  }
+
+  // {/* type of food toggle tabs */}
+  // { this.state.ingredientButtonToggle === "pizza" &&
+  //   this.state.ingredientButtonPizza.map((object, i) =>
+  //     <PizzaButtons
+  //     buttonImage={this.state.ingredientButtonPizza[i].imgSrc}
+  //     buttonName={this.state.ingredientButtonPizza[i].name}
+  //     buttonDescription={this.state.ingredientButtonPizza[i].description}
+  //     buttonPrice={this.state.ingredientButtonPizza[i].price}
+  //     />
+  //   )
+  //   || this.state.ingredientButtonToggle === "sendvici" && <SendviciButtons />
+  //   || this.state.ingredientButtonToggle === "pite" && <PiteButtons />
+  //   || this.state.ingredientButtonToggle === "salate" && <SalateButtons />
+  //   || <PizzaButtons />
+  // }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//

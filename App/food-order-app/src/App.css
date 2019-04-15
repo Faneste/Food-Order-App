@@ -27,6 +27,17 @@
   "Review";
 }
 
+/* making all images not selectable or highlighted */
+img {
+  pointer-events: none;
+  user-select: none;
+}
+
+/* setting buttons to be hidden by default for the menu toggle */
+#sendvici-toggle, #pite-toggle, #salate-toggle {
+  display: none;
+}
+
 /*------------ header ------------*/
 .header {
   height: 165px;
@@ -118,6 +129,7 @@
 .foodBuilder__buttonsContainer {
   grid-area: foodBuilderButtons;
   border: 1px solid var(--gray);
+  height: auto;
   margin-bottom: 50px;
 }
 
@@ -196,10 +208,14 @@
   /* grid-template-columns: repeat(3, auto); */
   /* align-items: center; */
   /* text-align: center; */
-  grid-template-columns: 120px auto;
+  grid-template-columns: 70px auto;
   /* grid-template-rows: repeat(1, auto); */
   grid-template-areas:
   "ingredientImage ingredientText";
+}
+
+.foodBuilder__ingredientButton__buttonContainer>div {
+  padding-top: 5px;
 }
 
 .foodBuilder__ingredientButton__buttonContainer:hover {
@@ -246,6 +262,28 @@
   /* border-left: 1px solid var(--gray); */
   /* margin-top: -60px; */
   /* padding: 5px; */
+}
+
+/* button that adds the ingredient and food */
+.addButton {
+  /* grid-area: ingredientText; */
+  /* position: absolute; */
+  height: 40px;
+  border: none;
+  background-color: var(--red);
+  color: var(--white);
+  font-size: var(--primaryText);
+  bottom: 5px;
+  width: 100%;
+}
+
+.addButton:hover {
+  cursor: pointer;
+  background-color: #bd0505;
+}
+
+.addButton:active {
+  background-color: var(--red);
 }
 
 /*------------ shopping cart ------------*/

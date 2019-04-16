@@ -3,7 +3,7 @@ import Buttons from './Buttons';
 
 function PiteButtons(props) {
   return (
-    <div className="foodBuilder__ingredientButton" id="pite-toggle">
+    <div className="foodBuilder__ingredientButton pite-toggle">
       {/* buttons for ingredients */}
       <Buttons
         buttonImage={props.buttonImage}

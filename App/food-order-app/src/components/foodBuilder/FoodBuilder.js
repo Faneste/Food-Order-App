@@ -20,14 +20,22 @@ class FoodBuilder extends React.Component {
       // food info for building the menu buttons
       ingredientButtonPizza: [
         {name: "pelat", description: "Lorem Ipsum is simply", price: 120, imgSrc: pelat,  calories: 80},
+        {name: "pelat", description: "Lorem Ipsum is simply", price: 120, imgSrc: pelat,  calories: 80},
+        {name: "pelat", description: "Lorem Ipsum is simply", price: 120, imgSrc: pelat,  calories: 80}
       ],
       ingredientButtonSendvici: [
+        {name: "sendvic1", description: "Lorem Ipsum is simply", price: 150, imgSrc: pelat,  calories: 180},
+        {name: "sendvic1", description: "Lorem Ipsum is simply", price: 150, imgSrc: pelat,  calories: 180},
         {name: "sendvic1", description: "Lorem Ipsum is simply", price: 150, imgSrc: pelat,  calories: 180}
       ],
       ingredientButtonPite: [
+        {name: "pite1", description: "Lorem Ipsum is simply", price: 110, imgSrc: pelat,  calories: 140},
+        {name: "pite1", description: "Lorem Ipsum is simply", price: 110, imgSrc: pelat,  calories: 140},
         {name: "pite1", description: "Lorem Ipsum is simply", price: 110, imgSrc: pelat,  calories: 140}
       ],
       ingredientButtonSalate: [
+        {name: "salate1", description: "Lorem Ipsum is simply", price: 200, imgSrc: pelat,  calories: 100},
+        {name: "salate1", description: "Lorem Ipsum is simply", price: 200, imgSrc: pelat,  calories: 100},
         {name: "salate1", description: "Lorem Ipsum is simply", price: 200, imgSrc: pelat,  calories: 100}
       ],
     };
@@ -39,34 +47,46 @@ class FoodBuilder extends React.Component {
     // getting id of the clicked menu button
     const tabId = e.target.id;
     // menu buttons groups to be shown or hidden
-    const pizzeToggle = document.getElementById("pizza-toggle");
-    const sendviciToggle = document.getElementById("sendvici-toggle");
-    const piteToggle = document.getElementById("pite-toggle");
-    const salateToggle = document.getElementById("salate-toggle");
+    const pizzeToggle = document.getElementsByClassName("pizza-toggle");
+    const sendviciToggle = document.getElementsByClassName("sendvici-toggle");
+    const piteToggle = document.getElementsByClassName("pite-toggle");
+    const salateToggle = document.getElementsByClassName("salate-toggle");
     // shows the food tab based on the button id and hides others
     if (tabId === "pizze") {
-      pizzeToggle.style.display = "block";
-      sendviciToggle.style.display = "none";
-      piteToggle.style.display = "none";
-      salateToggle.style.display = "none";
+      // loops all the buttons and shows/hides them
+      for (let i=0; i<pizzeToggle.length; i++) {
+        pizzeToggle[i].style.display = "block";
+        sendviciToggle[i].style.display = "none";
+        piteToggle[i].style.display = "none";
+        salateToggle[i].style.display = "none";
+      }
     }
     if (tabId === "sendvici") {
-      pizzeToggle.style.display = "none";
-      sendviciToggle.style.display = "block";
-      piteToggle.style.display = "none";
-      salateToggle.style.display = "none";
+      // loops all the buttons and shows/hides them
+      for (let i=0; i<pizzeToggle.length; i++) {
+        pizzeToggle[i].style.display = "none";
+        sendviciToggle[i].style.display = "block";
+        piteToggle[i].style.display = "none";
+        salateToggle[i].style.display = "none";
+      }
     }
     if (tabId === "pite") {
-      pizzeToggle.style.display = "none";
-      sendviciToggle.style.display = "none";
-      piteToggle.style.display = "block";
-      salateToggle.style.display = "none";
+      // loops all the buttons and shows/hides them
+      for (let i=0; i<pizzeToggle.length; i++) {
+        pizzeToggle[i].style.display = "none";
+        sendviciToggle[i].style.display = "none";
+        piteToggle[i].style.display = "block";
+        salateToggle[i].style.display = "none";
+      }
     }
     if (tabId === "salate") {
-      pizzeToggle.style.display = "none";
-      sendviciToggle.style.display = "none";
-      piteToggle.style.display = "none";
-      salateToggle.style.display = "block";
+      // loops all the buttons and shows/hides them
+      for (let i=0; i<pizzeToggle.length; i++) {
+        pizzeToggle[i].style.display = "none";
+        sendviciToggle[i].style.display = "none";
+        piteToggle[i].style.display = "none";
+        salateToggle[i].style.display = "block";
+      }
     }
   }
 
@@ -87,6 +107,8 @@ class FoodBuilder extends React.Component {
               tabMenu={this.tabMenu}
             />
 
+            {/* separate ingredients buttons conatiner so that it scrolls */}
+            <div  className="buttonsContainer">
             {/* pizza buttons map builder */}
             {this.state.ingredientButtonPizza.map((object, i) =>
               <PizzaButtons
@@ -130,6 +152,7 @@ class FoodBuilder extends React.Component {
               imageAlt={this.state.ingredientButtonSalate[i].name}
               />
             )}
+            </div>
 
             {/* add the ingredient or food button */}
             <button className="addButton">Dodaj</button>

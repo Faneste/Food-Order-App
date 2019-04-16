@@ -3,7 +3,7 @@ import Buttons from './Buttons';
 
 function SendviciButtons(props) {
   return (
-    <div className="foodBuilder__ingredientButton" id="sendvici-toggle">
+    <div className="foodBuilder__ingredientButton sendvici-toggle">
       {/* buttons for ingredients */}
       <Buttons
         buttonImage={props.buttonImage}

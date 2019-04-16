@@ -34,7 +34,7 @@ img {
 }
 
 /* setting buttons to be hidden by default for the menu toggle */
-#sendvici-toggle, #pite-toggle, #salate-toggle {
+.sendvici-toggle, .pite-toggle, .salate-toggle {
   display: none;
 }
 
@@ -125,11 +125,21 @@ img {
   /* background-color: red; */
 }
 
+/* separate ingredients buttons conatiner so that it scrolls  */
+.buttonsContainer {
+  overflow-y: auto;
+  height: 400px;
+  -webkit-box-shadow: inset 0px -8px 9px -3px rgba(0,0,0,0.20);
+  -moz-box-shadow: inset 0px -8px 9px -3px rgba(0,0,0,0.20);
+  box-shadow: inset 0px -8px 9px -3px rgba(0,0,0,0.20);
+}
+
 /* buttons container */
 .foodBuilder__buttonsContainer {
   grid-area: foodBuilderButtons;
   border: 1px solid var(--gray);
-  height: auto;
+  height: 500px;
+  width: 550px;
   margin-bottom: 50px;
 }
 
@@ -174,27 +184,27 @@ img {
   width: 1px;
 } */
 
-.foodBuilder__ingredientsContainerbutton {
+/* .foodBuilder__ingredientsContainerbutton {
   text-align: center;
   border-bottom: 1px solid var(--gray);
-}
+} */
 
-.foodBuilder__ingredientsContainer__pizzaIngredientsMenuContainer {
+/* .foodBuilder__ingredientsContainer__pizzaIngredientsMenuContainer {
 
-}
+} */
 
-.foodBuilder__ingredientsContainer__pizzaIngredientsMenuContainer__button {
+/* .foodBuilder__ingredientsContainer__pizzaIngredientsMenuContainer__button {
   font-size: var(--primaryText);
   background: none;
   border: none;
-  /* font-size: 15px; */
+  font-size: 15px;
   margin: 20px;
-}
+} */
 
-.foodBuilder__ingredientsContainer__pizzaIngredientsMenuContainer__button:hover {
+/* .foodBuilder__ingredientsContainer__pizzaIngredientsMenuContainer__button:hover {
   cursor: pointer;
   color: var(--darkGray);
-}
+} */
 
 /* ingredients buttons */
 
@@ -647,6 +657,7 @@ img {
   /* buttons container */
   .foodBuilder__buttonsContainer {
     grid-area: foodBuilderButtons;
+    width: 100%;
   }
 
   .foodBuilder__buttonsContainer__foodtypeMenu {

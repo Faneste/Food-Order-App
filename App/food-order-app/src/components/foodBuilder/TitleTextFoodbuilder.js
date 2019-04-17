@@ -4,7 +4,7 @@ function TitleTextFoodbuilder() {
   return (
       <div className="foodBuilder__textContainer">
         {/* title and text of the food building module */}
-        <h2 className="foodBuilder__textContainer__title">Order your food online as you like it</h2>
+        <h2 className="foodBuilder__textContainer__title">Naručite hranu online na svoj način</h2>
         <h3 className="foodBuilder__textContainer__text">
         Lorem Ipsum is simply dummy text of the printing and typesetting industry.
         Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,

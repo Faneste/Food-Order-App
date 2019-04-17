@@ -11,12 +11,12 @@ class Gallery extends React.Component {
           <GallerySlider />
         </div>
         <div className="gallery__textContainer">
-          <h1>See our restaurant inside out</h1>
+          <h1>Pogledajte naš restoran</h1>
           <h4>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
           Lorem Ipsum is simply dummy text of the printing and typesetting industry.
           Lorem Ipsum is simply dummy text of the printing and typesetting industry.
           Lorem Ipsum is simply dummy text of the printing and typesetting industry.</h4>
-          
+
           <h4>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
           Lorem Ipsum is simply dummy text of the printing and typesetting industry.
           Lorem Ipsum is simply dummy text of the printing and typesetting industry.

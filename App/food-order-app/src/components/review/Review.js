@@ -47,13 +47,13 @@ function Review() {
       <div className="review__inputContainer">
 
           <form action="review__inputContainer__form">
-            <input className="review__inputContainer__form__name" type="text" name="name" placeholder="Name:" />
+            <input className="review__inputContainer__form__name" type="text" name="name" placeholder="Ime:" />
 
             <input className="review__inputContainer__form__email" type="text" name="lastname" placeholder="E-mail:" />
 
-            <input className="review__inputContainer__form__comment" type="text" name="comment" placeholder="Comment" />
+            <input className="review__inputContainer__form__comment" type="text" name="comment" placeholder="Komentar" />
 
-            <input className="review__inputContainer__form__button" type="button" value="Submit"/>
+            <input className="review__inputContainer__form__button" type="button" value="Pošalji"/>
           </form>
 
       </div>

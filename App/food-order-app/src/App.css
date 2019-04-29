@@ -138,9 +138,9 @@ img {
 .foodBuilder__buttonsContainer {
   grid-area: foodBuilderButtons;
   border: 1px solid var(--gray);
-  height: 500px;
+  height: auto;
   width: 560px;
-  margin-bottom: 50px;
+  margin-bottom: 60px;
 }
 
 .foodBuilder__buttonsContainer__foodtypeMenu {
@@ -212,6 +212,7 @@ img {
 
 .foodBuilder__ingredientButton__buttonContainer {
   border-bottom: 1px solid var(--gray);
+  border-top: 1px solid var(--gray);
   /* grid options and naming */
   display: grid;
   /* grid-template-columns: repeat(3, 300px); */
@@ -294,6 +295,15 @@ img {
 
 .addButton:active {
   background-color: var(--red);
+}
+
+/* checkbox for additional ingredients */
+.checkbox {
+
+}
+
+.checkbox__input {
+
 }
 
 /*------------ shopping cart ------------*/

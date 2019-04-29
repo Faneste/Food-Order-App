@@ -19,6 +19,7 @@ function ShoppingCart() {
           <h2 className="shoppingCart__item__priceContainer__price">1523 rsd</h2>
         </div>
       </div>
+
       {/* shopping cart total order and price */}
       <div className="shoppingCart__total">
         {/* total price */}

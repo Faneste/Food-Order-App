@@ -7,6 +7,7 @@ import PizzaButtons from './PizzaButtons';
 import SendviciButtons from './SendviciButtons';
 import PiteButtons from './PiteButtons';
 import SalateButtons from './SalateButtons';
+import ButtonsCheckbox from './ButtonsCheckbox';
 // ingredient images
 import pelat from '../../images/buttons/pizza/pelat.png';
 
@@ -36,15 +37,33 @@ class FoodBuilder extends React.Component {
         {name: "salate2", description: "Lorem Ipsum is simply", price: 200, imgSrc: pelat,  calories: 100, boolean: false},
         {name: "salate3", description: "Lorem Ipsum is simply", price: 200, imgSrc: pelat,  calories: 100, boolean: false}
       ],
+      checkBoxIngredients: {
+        kecap: false,
+        majonez: false,
+        senf: false,
+        ciliSos: false,
+        ljuto: false
+      },
       addedFoodTemporary: [],
       addedFoodFinal: []
     };
     this.tabMenu = this.tabMenu.bind(this);
     this.ingredientButtonClick = this.ingredientButtonClick.bind(this);
+    this.addIngredientFinalOrder = this.addIngredientFinalOrder.bind(this);
+    this.checkBoxChange = this.checkBoxChange.bind(this);
   }
 
   // toggling tab menu for types of food
   tabMenu(e) {
+    // resets the entire state booleans to false so that it starts new when you change tab
+    const { statePizza } = this.state; const { stateSendvici } = this.state; const { statePite } = this.state; const { stateSalate } = this.state;
+    for (let i=0; i<statePizza.length; i++) {
+      statePizza[i].boolean = false;
+      stateSendvici[i].boolean = false;
+      statePite[i].boolean = false;
+      stateSalate[i].boolean = false;
+    }
+
     // getting id of the clicked menu button
     const tabId = e.target.id;
     // menu buttons groups to be shown or hidden
@@ -52,6 +71,8 @@ class FoodBuilder extends React.Component {
     const sendviciToggle = document.getElementsByClassName("sendvici-toggle");
     const piteToggle = document.getElementsByClassName("pite-toggle");
     const salateToggle = document.getElementsByClassName("salate-toggle");
+    // additional ingredients checkbox to be hidden for pizza
+    const checkboxToggle =  document.getElementById("checkboxId");
     // shows the food tab based on the button id and hides others
     if (tabId === "pizze") {
       // loops all the buttons and shows/hides them
@@ -61,6 +82,8 @@ class FoodBuilder extends React.Component {
         piteToggle[i].style.display = "none";
         salateToggle[i].style.display = "none";
       }
+      // checkbox ingredients
+      checkboxToggle.style.display = "none";
     }
     if (tabId === "sendvici") {
       // loops all the buttons and shows/hides them
@@ -70,6 +93,8 @@ class FoodBuilder extends React.Component {
         piteToggle[i].style.display = "none";
         salateToggle[i].style.display = "none";
       }
+      // checkbox ingredients
+      checkboxToggle.style.display = "block";
     }
     if (tabId === "pite") {
       // loops all the buttons and shows/hides them
@@ -79,6 +104,8 @@ class FoodBuilder extends React.Component {
         piteToggle[i].style.display = "block";
         salateToggle[i].style.display = "none";
       }
+      // checkbox ingredients
+      checkboxToggle.style.display = "block";
     }
     if (tabId === "salate") {
       // loops all the buttons and shows/hides them
@@ -88,11 +115,25 @@ class FoodBuilder extends React.Component {
         piteToggle[i].style.display = "none";
         salateToggle[i].style.display = "block";
       }
+      // checkbox ingredients
+      checkboxToggle.style.display = "block";
     }
   }
 
-  // toggles individual ingredient boolean true or false
+
+
+
+  // toggles/selects individual ingredient boolean true or false
   ingredientButtonClick(e) {
+    // shows hide checkbox ingredients benath the main ing. buttons
+    const checkBoxElement = e.target.parentNode.querySelector(".checkbox");
+    if (checkBoxElement) { // if node exist / it doesnt for pizza ing.
+      if (checkBoxElement.style.display === "none") {
+        checkBoxElement.style.display = "block";
+      } else {
+        checkBoxElement.style.display = "none";
+      }
+    }
     /////////////////////// PIZZA INGREDIENTS FUNC
     // puts state in const
     const { statePizza } = this.state;
@@ -104,8 +145,7 @@ class FoodBuilder extends React.Component {
       }
       return statePizza;
     })
-
-    /////////////////////// SENDVICI INGREDIENTS FUNC
+    /////////////////////// SENDVICI INGREDIENTS FUNC                             MORA DA SE KLIKNE NA SLIKU DUGMETA DA BI RADILO-POPRAVI
     // puts state in const
     const { stateSendvici } = this.state;
     // map of the ingredient array that toggles selected ingredient boolean false to true
@@ -116,7 +156,6 @@ class FoodBuilder extends React.Component {
       }
       return stateSendvici;
     })
-
     /////////////////////// PITE INGREDIENTS FUNC
     // puts state in const
     const { statePite } = this.state;
@@ -128,7 +167,6 @@ class FoodBuilder extends React.Component {
       }
       return statePite;
     })
-
     /////////////////////// SALATE INGREDIENTS FUNC
     // puts state in const
     const { stateSalate } = this.state;
@@ -141,6 +179,92 @@ class FoodBuilder extends React.Component {
       return stateSalate;
     })
   }
+
+  checkBoxChange(e) {
+    console.log(e.target.value);
+  }
+
+
+
+
+  addIngredientFinalOrder() {
+    console.log(this.checkboxRef.checked);
+
+
+
+    // puts state in const
+    const { statePizza } = this.state;
+    const { stateSendvici } = this.state;
+    const { statePite } = this.state;
+    const { stateSalate } = this.state;
+    // creates seperate array of the ingredient properties
+    let name = [], description = [], price = [], imgSrc = [], calories = [];
+    // main array that will hold all the ingred. data
+    let allData = [];
+
+    // map of the selected ingredient true boolean and pushes it to the above array
+    // of the seperate ingredient arrays
+    ////// PIZZA
+    statePizza.map((object, i) => {
+      if (statePizza[i].boolean === true ) {
+        name.push(statePizza[i].name);
+        description.push(statePizza[i].description);
+        price.push(statePizza[i].price);
+        imgSrc.push(statePizza[i].imgSrc);
+        calories.push(statePizza[i].calories);
+      }
+      return statePizza;
+    });
+    ////// SENDVICI
+    stateSendvici.map((object, i) => {
+      if (stateSendvici[i].boolean === true ) {
+        name.push(stateSendvici[i].name);
+        description.push(stateSendvici[i].description);
+        price.push(stateSendvici[i].price);
+        imgSrc.push(stateSendvici[i].imgSrc);
+        calories.push(stateSendvici[i].calories);
+      }
+      return stateSendvici;
+    });
+    ////// PITE
+    statePite.map((object, i) => {
+      if (statePite[i].boolean === true ) {
+        name.push(statePite[i].name);
+        description.push(statePite[i].description);
+        price.push(statePite[i].price);
+        imgSrc.push(statePite[i].imgSrc);
+        calories.push(statePite[i].calories);
+      }
+      return statePite;
+    });
+    ////// SALATE
+    stateSalate.map((object, i) => {
+      if (stateSalate[i].boolean === true ) {
+        name.push(stateSalate[i].name);
+        description.push(stateSalate[i].description);
+        price.push(stateSalate[i].price);
+        imgSrc.push(stateSalate[i].imgSrc);
+        calories.push(stateSalate[i].calories);
+      }
+      return stateSalate;
+    });
+
+    // pushes all the seperate ingred. array into the main one
+    allData.push(name, description, price, imgSrc, calories);
+    this.setState(prevState => ({
+         addedFoodTemporary: [...prevState.addedFoodTemporary, allData],
+    }))
+    // resets the all booleans to be false so it would remove all the images and data from view and set the blank empty list
+    statePizza.map((object, i) => { return statePizza[i].boolean = false; })
+    stateSendvici.map((object, i) => { return stateSendvici[i].boolean = false; })
+    statePite.map((object, i) => { return statePite[i].boolean = false; })
+    stateSalate.map((object, i) => { return stateSalate[i].boolean = false; })
+
+    // console.log(this.state.addedFoodTemporary);
+  }
+
+
+
 
   render() {
     return (
@@ -170,6 +294,7 @@ class FoodBuilder extends React.Component {
               buttonPrice={this.state.statePizza[i].price}
               imageAlt={this.state.statePizza[i].name}
               ingredientButtonClick={this.ingredientButtonClick}
+              key={this.state.statePizza[i].name}
 
               dataname={this.state.statePizza[i].name}
               datadescription={this.state.statePizza[i].description}
@@ -188,6 +313,7 @@ class FoodBuilder extends React.Component {
               buttonPrice={this.state.stateSendvici[i].price}
               imageAlt={this.state.stateSendvici[i].name}
               ingredientButtonClick={this.ingredientButtonClick}
+              key={this.state.stateSendvici[i].name}
 
               dataname={this.state.stateSendvici[i].name}
               datadescription={this.state.stateSendvici[i].description}
@@ -206,6 +332,7 @@ class FoodBuilder extends React.Component {
               buttonPrice={this.state.statePite[i].price}
               imageAlt={this.state.statePite[i].name}
               ingredientButtonClick={this.ingredientButtonClick}
+              key={this.state.statePite[i].name}
 
               dataname={this.state.statePite[i].name}
               datadescription={this.state.statePite[i].description}
@@ -224,6 +351,7 @@ class FoodBuilder extends React.Component {
               buttonPrice={this.state.stateSalate[i].price}
               imageAlt={this.state.stateSalate[i].name}
               ingredientButtonClick={this.ingredientButtonClick}
+              key={this.state.stateSalate[i].name}
 
               dataname={this.state.stateSalate[i].name}
               datadescription={this.state.stateSalate[i].description}
@@ -234,8 +362,19 @@ class FoodBuilder extends React.Component {
             )}
             </div>
 
+            {/* checkboxes for additional ingredients */}
+            <ButtonsCheckbox
+              checkBoxChange={this.checkBoxChange}
+
+              checkboxChecked={this.checkboxChecked}
+              kecap={this.state.checkBoxIngredients.kecap}
+              majonez={this.state.checkBoxIngredients.majonez}
+              senf={this.state.checkBoxIngredients.senf}
+              ciliSos={this.state.checkBoxIngredients.ciliSos}
+              ljuto={this.state.checkBoxIngredients.ljuto}
+            />
             {/* add the ingredient or food button */}
-            <button className="addButton">Dodaj</button>
+            <button className="addButton" onClick={this.addIngredientFinalOrder}>Dodaj</button>
 
           </div>
 

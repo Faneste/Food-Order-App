@@ -37,13 +37,13 @@ class FoodBuilder extends React.Component {
         {name: "salate2", description: "Lorem Ipsum is simply", price: 200, imgSrc: pelat,  calories: 100, boolean: false},
         {name: "salate3", description: "Lorem Ipsum is simply", price: 200, imgSrc: pelat,  calories: 100, boolean: false}
       ],
-      checkBoxIngredients: {
-        kecap: false,
-        majonez: false,
-        senf: false,
-        ciliSos: false,
-        ljuto: false
-      },
+      // extra ingredients for checkboxes
+      kecap: false,
+      majonez: false,
+      senf: false,
+      ciliSos: false,
+      ljuto: false,
+      // temporary states for orders
       addedFoodTemporary: [],
       addedFoodFinal: []
     };
@@ -151,9 +151,13 @@ class FoodBuilder extends React.Component {
     // map of the ingredient array that toggles selected ingredient boolean false to true
     stateSendvici.map((object, i) => {
       if (stateSendvici[i].name === e.target.getAttribute('data-name')) {
-        stateSendvici[i].boolean = !stateSendvici[i].boolean
+        stateSendvici[i].boolean = true
         this.setState({}); // this updates state
       }
+      if (stateSendvici[i].name !== e.target.getAttribute('data-name')) {
+        stateSendvici[i].boolean = false
+      }
+      
       return stateSendvici;
     })
     /////////////////////// PITE INGREDIENTS FUNC
@@ -178,29 +182,35 @@ class FoodBuilder extends React.Component {
       }
       return stateSalate;
     })
+
   }
 
-  checkBoxChange(e) {
-    console.log(e.target.value);
+  // checkbox ingredient func
+  checkBoxChange = event => {
+    // puts the checkbox value into let so that it references the state with the same name
+    let checkboxValue = event.target.value;
+    // changes the state coresponding with the value, .ie if value is kecap then state.kecap changes
+    this.setState({ [checkboxValue]: event.target.checked})
   }
-
-
-
 
   addIngredientFinalOrder() {
-    console.log(this.checkboxRef.checked);
-
-
-
+    // creates seperate array of the ingredient properties
+    let name = [], description = [], price = [], imgSrc = [], calories = [], extraIngredients = [];
+    // main array that will hold all the ingred. data
+    let allData = [];
     // puts state in const
     const { statePizza } = this.state;
     const { stateSendvici } = this.state;
     const { statePite } = this.state;
     const { stateSalate } = this.state;
-    // creates seperate array of the ingredient properties
-    let name = [], description = [], price = [], imgSrc = [], calories = [];
-    // main array that will hold all the ingred. data
-    let allData = [];
+
+    // pushing selected checkbox ingredients into extraIngredients let
+    if (this.state.kecap === true) { extraIngredients.push("kecap /") };
+    if (this.state.majonez === true) { extraIngredients.push("majonez /") };
+    if (this.state.senf === true) { extraIngredients.push("senf /") };
+    if (this.state.ciliSos === true) { extraIngredients.push("cili sos /") };
+    if (this.state.ljuto === true) { extraIngredients.push("ljuto /") };
+    // console.log(extraIngredients);
 
     // map of the selected ingredient true boolean and pushes it to the above array
     // of the seperate ingredient arrays
@@ -250,7 +260,7 @@ class FoodBuilder extends React.Component {
     });
 
     // pushes all the seperate ingred. array into the main one
-    allData.push(name, description, price, imgSrc, calories);
+    allData.push(name, description, price, imgSrc, calories, extraIngredients);
     this.setState(prevState => ({
          addedFoodTemporary: [...prevState.addedFoodTemporary, allData],
     }))
@@ -260,11 +270,8 @@ class FoodBuilder extends React.Component {
     statePite.map((object, i) => { return statePite[i].boolean = false; })
     stateSalate.map((object, i) => { return stateSalate[i].boolean = false; })
 
-    // console.log(this.state.addedFoodTemporary);
+    console.log(this.state.addedFoodTemporary);
   }
-
-
-
 
   render() {
     return (
@@ -366,12 +373,11 @@ class FoodBuilder extends React.Component {
             <ButtonsCheckbox
               checkBoxChange={this.checkBoxChange}
 
-              checkboxChecked={this.checkboxChecked}
-              kecap={this.state.checkBoxIngredients.kecap}
-              majonez={this.state.checkBoxIngredients.majonez}
-              senf={this.state.checkBoxIngredients.senf}
-              ciliSos={this.state.checkBoxIngredients.ciliSos}
-              ljuto={this.state.checkBoxIngredients.ljuto}
+              kecap={this.state.kecap}
+              majonez={this.state.majonez}
+              senf={this.state.senf}
+              ciliSos={this.state.ciliSos}
+              ljuto={this.state.ljuto}
             />
             {/* add the ingredient or food button */}
             <button className="addButton" onClick={this.addIngredientFinalOrder}>Dodaj</button>

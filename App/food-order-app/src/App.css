@@ -91,11 +91,12 @@ img {
   /* grid options and naming */
   grid-area: FoodBuilder;
   display: grid;
-  grid-template-rows: repeat(2, auto);
+  grid-template-rows: repeat(3, auto);
   grid-template-columns: repeat(2, auto);
   grid-template-areas:
   "foodBuilderText foodBuilderText"
-  "foodBuilderImage foodBuilderButtons";
+  "foodBuilderImage foodBuilderButtons"
+  "shoppingCart shoppingCart";
 }
 
 /* text container */
@@ -299,7 +300,7 @@ img {
 
 /* checkbox for additional ingredients */
 #checkboxId {
-  display: none;  
+  display: none;
 }
 
 .checkbox {
@@ -312,10 +313,12 @@ img {
 
 /*------------ shopping cart ------------*/
 .shoppingCart {
-  grid-area: ShoppingCart;
+  grid-area: shoppingCart;
+  width: 93.5%;
   border: 1px solid var(--gray);
-  margin-top: 50px;
-  border-bottom: 5px solid var(--red);
+  margin-top: 0px;
+  margin-bottom: 40px;
+  /* border-bottom: 5px solid var(--red); */
 }
 
 /* single item */
@@ -572,23 +575,6 @@ img {
   color: #333333;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*---------------------------------------------------------------*/
 /*------------------------ mobile design ------------------------*/
 /*---------------------------------------------------------------*/
@@ -647,7 +633,8 @@ img {
     grid-template-columns: repeat(2, auto);
     grid-template-areas:
     "foodBuilderButtons foodBuilderButtons"
-    "foodBuilderImage foodBuilderImage";
+    "foodBuilderImage foodBuilderImage"
+    "shoppingCart shoppingCart";
   }
 
   /* text container */

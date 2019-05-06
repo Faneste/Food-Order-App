@@ -1,6 +1,8 @@
 import React from 'react';
 // modules
 import TitleTextFoodbuilder from './TitleTextFoodbuilder';
+import ShoppingCart from './ShoppingCart';
+import ShoppingCartTotal from './ShoppingCartTotal';
 import PizzaDough from './PizzaDough';
 import FoodTypeMenu from './FoodTypeMenu';
 import PizzaButtons from './PizzaButtons';
@@ -50,6 +52,7 @@ class FoodBuilder extends React.Component {
     this.tabMenu = this.tabMenu.bind(this);
     this.ingredientButtonClick = this.ingredientButtonClick.bind(this);
     this.addIngredientFinalOrder = this.addIngredientFinalOrder.bind(this);
+    this.shopcartDelete = this.shopcartDelete.bind(this);
     this.checkBoxChange = this.checkBoxChange.bind(this);
   }
 
@@ -157,7 +160,7 @@ class FoodBuilder extends React.Component {
       if (stateSendvici[i].name !== e.target.getAttribute('data-name')) {
         stateSendvici[i].boolean = false
       }
-      
+
       return stateSendvici;
     })
     /////////////////////// PITE INGREDIENTS FUNC
@@ -259,18 +262,30 @@ class FoodBuilder extends React.Component {
       return stateSalate;
     });
 
+    // removes empty elements from array // needs to be fixed
+    // let filtered =  allData.filter(e => e.length);
+
     // pushes all the seperate ingred. array into the main one
     allData.push(name, description, price, imgSrc, calories, extraIngredients);
     this.setState(prevState => ({
          addedFoodTemporary: [...prevState.addedFoodTemporary, allData],
     }))
+
     // resets the all booleans to be false so it would remove all the images and data from view and set the blank empty list
     statePizza.map((object, i) => { return statePizza[i].boolean = false; })
     stateSendvici.map((object, i) => { return stateSendvici[i].boolean = false; })
     statePite.map((object, i) => { return statePite[i].boolean = false; })
     stateSalate.map((object, i) => { return stateSalate[i].boolean = false; })
 
+    // if (this.state.addedFoodTemporary[1] !== undefined ) {
+    //   console.log("aasasas");
+    // }
+
     console.log(this.state.addedFoodTemporary);
+  }
+
+  shopcartDelete(e) {
+    e.currentTarget.parentNode.remove();
   }
 
   render() {
@@ -290,7 +305,7 @@ class FoodBuilder extends React.Component {
               tabMenu={this.tabMenu}
             />
 
-            {/* separate ingredients buttons conatiner so that it scrolls */}
+            {/* separate ingredients buttons container so that it scrolls */}
             <div  className="buttonsContainer">
             {/* pizza buttons map builder */}
             {this.state.statePizza.map((object, i) =>
@@ -382,6 +397,23 @@ class FoodBuilder extends React.Component {
             {/* add the ingredient or food button */}
             <button className="addButton" onClick={this.addIngredientFinalOrder}>Dodaj</button>
 
+          </div>
+
+          <div className="shoppingCart">
+          {/* final order map builder // with price reducer */}
+          {this.state.addedFoodTemporary.map((object, i) =>
+            <ShoppingCart
+            shopcartIngredients={this.state.addedFoodTemporary[i][0]}
+            shopcartPrice={this.state.addedFoodTemporary[i][2]
+              .reduce(function (accumulator, currentValue) {
+              return accumulator + currentValue;}, 0)}
+
+            shopcartDelete={this.shopcartDelete}
+            key={this.state.addedFoodTemporary[i][0]}
+            />
+          )}
+
+          <ShoppingCartTotal />
           </div>
 
         </div>

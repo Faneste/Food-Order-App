@@ -3,7 +3,6 @@ import './App.css';
 import Header from './components/header/Header';
 import IntroductoryText from './components/introductoryText/IntroductoryText';
 import FoodBuilder from './components/foodBuilder/FoodBuilder';
-import ShoppingCart from './components/shoppingCart/ShoppingCart';
 import Gallery from './components/gallery/Gallery';
 import BannerAdvert from './components/bannerAdvert/BannerAdvert';
 import Review from './components/review/Review';
@@ -17,7 +16,6 @@ class App extends Component {
         <div className="app">
           <IntroductoryText />
           <FoodBuilder />
-          <ShoppingCart />
           <Gallery />
           <BannerAdvert />
           <Review />

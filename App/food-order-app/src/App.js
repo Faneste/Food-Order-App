@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import './AppResponsive.css';
 import Header from './components/header/Header';
 import IntroductoryText from './components/introductoryText/IntroductoryText';
 import FoodBuilder from './components/foodBuilder/FoodBuilder';

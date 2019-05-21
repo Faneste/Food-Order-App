@@ -1,17 +1,12 @@
-Plan:
-1.napravi kostur app-a
-2.smisli listu sastojaka za pizzu,vrste pizze i sendvica
-3.napravi osnovno za sajt i smisli module layout kako ce da ide
-4.exportuj sve slike i grafiku
+Plan
 
-Vrste Hrane:
+1 sredi dizajn za dugmice i porucivanje
+2 smisli sta ce sve da bude od sastojaka i kako ce da izgleda
+3 namesti u css
 
-sendvici:
-sunka
-pecenica
-sir
-slanina
-pecurke
+pogledaj da ubacis drugu kategoriju odvojena funkcija ili nesto bolje
+
+4 pogledaj za array
 
 Pizza Sastojci:
 

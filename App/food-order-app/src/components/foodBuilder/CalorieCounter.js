@@ -1,12 +1,12 @@
 import React from 'react';
 
-// calorie counter
+// nutrition table displayed in the final order
 function CalorieCounter(props) {
   return (
     <div className="calorieCounter">
       <p className="calorieCounter__title">Ukup.nutr.vred.</p>
       <hr className="calorieCounter__firstHr" />
-      <p className="calorieCounter__subTitle">nutritivne vrednosti mogu da variraju</p>
+      <p className="calorieCounter__subTitle">nutritivne vrednosti variraju</p>
 
       <hr className="calorieCounter__secondHr" />
       <p className="calorieCounter__subTitle">Kalorije
@@ -15,7 +15,7 @@ function CalorieCounter(props) {
 
       <hr className="calorieCounter__thirdHr" />
       <p className="calorieCounter__subTitle">
-        <span style={{fontWeight: 700}}>Totalne Masti</span>
+        <span style={{fontWeight: 700}}>Totalne Masti </span>
         <span style={{color: "#eb0707"}}>(g)</span>
         <span className="calorieCounter__number">{props.calorieFat || 0}</span>
       </p>
@@ -31,7 +31,7 @@ function CalorieCounter(props) {
       <hr className="calorieCounter__hrThin" />
 
       <p className="calorieCounter__subTitle">
-        <span style={{marginLeft: "20px"}}>Polinezasićena Mast </span>
+        <span style={{marginLeft: "20px"}}>Polinez. Mast </span>
         <span style={{color: "#eb0707"}}>(g)</span>
         <span className="calorieCounter__number">{props.caloriePoly || 0}</span>
       </p>
@@ -55,7 +55,7 @@ function CalorieCounter(props) {
       <hr className="calorieCounter__hrThin" />
 
       <p className="calorieCounter__subTitle">
-        <span style={{fontWeight: 700}}>Kompletni Ugljeni Hidrati </span>
+        <span style={{fontWeight: 700}}>Komp. Uglje. Hid. </span>
         <span style={{color: "#eb0707"}}>(g)</span>
         <span className="calorieCounter__number">{props.calorieCharb || 0}</span>
       </p>
@@ -63,7 +63,7 @@ function CalorieCounter(props) {
       <hr className="calorieCounter__hrThin" />
 
       <p className="calorieCounter__subTitle">
-        <span style={{marginLeft: "20px"}}>Prehrambena Vlakna </span>
+        <span style={{marginLeft: "20px"}}>Preh. Vlakna </span>
         <span style={{color: "#eb0707"}}>(g)</span>
         <span className="calorieCounter__number">{props.calorieFiber || 0}</span>
       </p>

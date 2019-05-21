@@ -1,6 +1,7 @@
 import React from 'react';
 
 // unused module for pizza ingredients tab toggle menu
+// I wanted to have a menu like below but it's easier to have all the displayed at once so this module is unused 
 function PizzaIngredientsMenu() {
   return (
         <div className="foodBuilder__ingredientsContainerbutton">

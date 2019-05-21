@@ -1,13 +1,15 @@
 import React from 'react';
+// gallery slider plugin / link: https://reactjsexample.com/lightweight-and-fully-customizable-carousel-component-for-react/
 import { Carousel } from 'react-responsive-carousel';
-import styles from 'react-responsive-carousel/lib/styles/carousel.min.css';
+// styling the gallery slider
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
+// gallery slider images
 import slider1 from '../../images/slider/slider1.jpg';
 import slider2 from '../../images/slider/slider2.jpg';
 import slider3 from '../../images/slider/slider3.jpg';
-// slider code link:  https://reactjsexample.com/lightweight-and-fully-customizable-carousel-component-for-react/
 
+// gallery slider plugin module with images, image description and options
 class GallerySlider extends React.Component {
-
   render() {
       return (
           <Carousel
@@ -32,7 +34,6 @@ class GallerySlider extends React.Component {
           </Carousel>
       );
   }
-
 }
 
 export default GallerySlider;
